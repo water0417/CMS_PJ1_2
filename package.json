@@ -10,7 +10,7 @@
     "dev": "concurrently -n API,WEB -c blue,green \"npm run dev -w apps/api\" \"npm run dev -w apps/web\"",
     "build": "npm run build -w apps/api && npm run build -w apps/web",
     "start": "npm run start -w apps/api",
-    "test": "tsx --test tests/engine.test.ts tests/branch-routing.test.ts tests/frontend-routing.test.ts",
+    "test": "tsx --test tests/engine.test.ts tests/branch-routing.test.ts tests/frontend-routing.test.ts tests/phase2-frontend.test.ts",
     "test:integration": "tsx tests/integration.ts",
     "test:seed:manual": "tsx tests/manual-seed.ts",
     "db:init": "node scripts/init-db.cjs",
@@ -20,7 +20,12 @@
     "routing:preview": "tsx scripts/preview-routing.ts",
     "routing:migrate": "tsx scripts/migrate-system-routing.ts",
     "routing:migrate:apply": "tsx scripts/migrate-system-routing.ts --apply",
-    "format": "prettier --write \"apps/**/*.{ts,vue,css,json,html}\" \"tests/*.ts\" \"scripts/*.{ts,cjs}\" \"docs/*.md\" README.md"
+    "format": "prettier --write \"apps/**/*.{ts,vue,css,json,html}\" \"tests/*.ts\" \"scripts/*.{ts,cjs}\" \"docs/*.md\" README.md",
+    "test:phase2": "tsx tests/phase2-integration.ts",
+    "db:phase2": "tsx scripts/init-phase2.ts",
+    "test:usage-scope": "tsx tests/phase2-usage-scope.ts",
+    "test:backend-additions": "tsx tests/phase2-backend-additions.ts",
+    "test:square": "tsx tests/phase2-square.ts"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

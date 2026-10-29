@@ -1,0 +1,42 @@
+{
+  "time": "2026-10-29T05:32:27.735Z",
+  "database": "survey_studio_backend_additions_test_1793251941057",
+  "results": [
+    {
+      "name": "用户名精确规范化、ID兼容及最小响应",
+      "result": "PASS"
+    },
+    {
+      "name": "用户名查得ID可投递及邀请，展示名称不泄露账号敏感字段",
+      "result": "PASS"
+    },
+    {
+      "name": "信封读取不改状态，接受拒绝后待处理数量更新且会话隔离",
+      "result": "PASS"
+    },
+    {
+      "name": "超过20邀请时pendingCount不依赖当前页",
+      "result": "PASS"
+    },
+    {
+      "name": "九种题型未保存编辑另存为独立v1，来源不变且原题不变",
+      "result": "PASS"
+    },
+    {
+      "name": "另存为验证内容、来源归属、当前访问权和防伪造",
+      "result": "PASS"
+    },
+    {
+      "name": "社区来源另存个人及社区需当前成员，旧保存修改仍产生新版本",
+      "result": "PASS"
+    },
+    {
+      "name": "社区概览真实计数、角色及入口，排除个人和已删除问卷",
+      "result": "PASS"
+    },
+    {
+      "name": "退出移除后概览与另存被拒绝，离开前个人副本仍独立可用",
+      "result": "PASS"
+    }
+  ]
+}

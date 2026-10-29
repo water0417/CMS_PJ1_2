@@ -1,0 +1,7 @@
+{
+  "port": 3107,
+  "pid": 67132,
+  "created": "2026-10-29T13:29:49.185044+08:00",
+  "command": "\"C:\\Program Files\\nodejs\\node.exe\" dist/main.js",
+  "buildHash": "B759E76AB704367958A9E5B1CDD653F9C650FEDD9B8AF8C3D419D26ADE9C49D1"
+}

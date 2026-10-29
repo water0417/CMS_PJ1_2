@@ -1,0 +1,40 @@
+{
+  "time": "2026-10-29T09:27:09.216Z",
+  "database": "survey_studio_square_ui_followup_20261029",
+  "results": [
+    {
+      "name": "关键词全库分页20+4及组合mine回第一页3条",
+      "result": "PASS"
+    },
+    {
+      "name": "九题型页面分别发出真实筛选查询且各返回1条",
+      "result": "PASS"
+    },
+    {
+      "name": "重置全部条件以及搜索无结果",
+      "result": "PASS"
+    },
+    {
+      "name": "人为延迟旧搜索使其晚于新搜索完成，页面另有DOM验收",
+      "result": "PASS"
+    },
+    {
+      "name": "真实邀请数2→1→0，列表记录接受与拒绝",
+      "result": "PASS"
+    },
+    {
+      "name": "持续404后超过60秒无自动重复，观察区间内请求为零",
+      "result": "PASS"
+    },
+    {
+      "name": "故障卡片503不妨碍其他社区200，移除后真实权限404",
+      "result": "PASS"
+    }
+  ],
+  "failurePause": {
+    "lastFailureAt": "2026-10-29T09:19:10.718Z",
+    "observedAt": "2026-10-29T09:20:23.328Z",
+    "count": 4,
+    "elapsedSeconds": 72.61
+  }
+}

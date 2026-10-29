@@ -1,0 +1,46 @@
+{
+  "database": "survey_studio_square_ui_followup_20261029",
+  "users": {
+    "admin": {
+      "id": "6ae30e2029d06a5af3c68f61",
+      "username": "square_admin"
+    },
+    "member": {
+      "id": "6ae30e2029d06a5af3c68f67",
+      "username": "square_member"
+    },
+    "outside": {
+      "id": "6ae30e2029d06a5af3c68f6d",
+      "username": "square_outside"
+    }
+  },
+  "rooms": [
+    {
+      "name": "共同编辑部 A",
+      "adminId": "6ae30e2029d06a5af3c68f61",
+      "revision": 0,
+      "writeSerial": 0,
+      "_id": "6ae30e2229d06a5af3c69112",
+      "createdAt": "2026-10-29T09:13:06.760Z",
+      "updatedAt": "2026-10-29T09:13:06.760Z"
+    },
+    {
+      "name": "协作社区 B",
+      "adminId": "6ae30e2029d06a5af3c68f61",
+      "revision": 0,
+      "writeSerial": 0,
+      "_id": "6ae30e2229d06a5af3c69125",
+      "createdAt": "2026-10-29T09:13:06.875Z",
+      "updatedAt": "2026-10-29T09:13:06.875Z"
+    },
+    {
+      "name": "邀请拒绝演示 C",
+      "adminId": "6ae30e2029d06a5af3c68f61",
+      "revision": 0,
+      "writeSerial": 0,
+      "_id": "6ae30e2229d06a5af3c69132",
+      "createdAt": "2026-10-29T09:13:06.941Z",
+      "updatedAt": "2026-10-29T09:13:06.941Z"
+    }
+  ]
+}

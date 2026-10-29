@@ -12,3 +12,5 @@ import './magazine.css';
 import './studio.css';
 
 import './editor.css';
+
+import './phase2.css';

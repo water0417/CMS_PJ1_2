@@ -8,6 +8,8 @@ const props = defineProps<{
   index: number;
   definition: Definition;
   locked: boolean;
+  contentOnly?: boolean;
+  contentLocked?: boolean;
   routingInfo?: Routing['questions'][number];
 }>();
 const emit = defineEmits<{ move: [index: number, delta: number]; remove: [index: number] }>();
@@ -100,12 +102,12 @@ function changeOperator(r: any) {
         <label class="required-control">
           <el-switch
             v-model="q.required"
-            :disabled="locked"
+            :disabled="locked || contentLocked"
             :aria-label="`第 ${index + 1} 题是否必答`"
           />
           必答
         </label>
-        <template v-if="!locked">
+        <template v-if="!locked && !contentOnly">
           <el-button text @click="move(-1)" :disabled="selected === 0">上移</el-button>
           <el-button text @click="move(1)" :disabled="selected === definition.questions.length - 1">
             下移
@@ -127,7 +129,7 @@ function changeOperator(r: any) {
         }}
       </span>
     </p>
-    <el-form label-position="top" :disabled="locked">
+    <el-form label-position="top" :disabled="locked || contentLocked">
       <div class="question-basics">
         <el-form-item label="题目标题">
           <el-input
@@ -164,7 +166,7 @@ function changeOperator(r: any) {
           <el-button
             text
             type="primary"
-            :disabled="locked || q.options.length >= 30"
+            :disabled="locked || contentLocked || q.options.length >= 30"
             @click="q.options.push({ id: uid(), label: '' })"
           >
             ＋ 添加选项
@@ -185,7 +187,7 @@ function changeOperator(r: any) {
           <el-button
             text
             type="primary"
-            :disabled="locked || q.rows.length >= 30"
+            :disabled="locked || contentLocked || q.rows.length >= 30"
             @click="q.rows.push({ id: uid(), label: '' })"
           >
             ＋ 添加行
@@ -277,7 +279,7 @@ function changeOperator(r: any) {
               :value="timeDisplay(q.validation.earliest)"
               @input="timeLimit('earliest', ($event.target as HTMLInputElement).value)"
               class="native-input"
-              :disabled="locked"
+              :disabled="locked || contentLocked"
             />
           </label>
           <label>
@@ -293,7 +295,7 @@ function changeOperator(r: any) {
               :value="timeDisplay(q.validation.latest)"
               @input="timeLimit('latest', ($event.target as HTMLInputElement).value)"
               class="native-input"
-              :disabled="locked"
+              :disabled="locked || contentLocked"
             />
           </label>
           <small>日期时间按北京时间设置；留空表示不限制。</small>
@@ -303,8 +305,10 @@ function changeOperator(r: any) {
         完整排序：填写时须确认全部选项的顺序，统计平均名次、首选次数及名次分布。
       </p>
       <p v-if="q.type === 'color'" class="hint">选择一个不透明颜色，统一保存为 #RRGGBB。</p>
+    </el-form>
+    <el-form label-position="top" :disabled="locked">
       <details
-        v-if="['single_choice', 'multiple_choice', 'number'].includes(q.type)"
+        v-if="!contentOnly && ['single_choice', 'multiple_choice', 'number'].includes(q.type)"
         class="logic-panel"
         :open="logicOpen"
         @toggle="logicOpen = ($event.target as HTMLDetailsElement).open"

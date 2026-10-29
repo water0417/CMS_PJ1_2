@@ -2,7 +2,9 @@
 import { ref, onMounted, onBeforeUnmount, nextTick, computed, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { ElMessage, ElMessageBox } from 'element-plus';
-import { api, labels, typeMarks, uid } from '../api';
+import { api, auth, labels, typeMarks, uid } from '../api';
+import { protectDraft, clone, allCommunities, confirm } from '../phase2';
+import SurveyLibrary from '../components/SurveyLibrary.vue';
 import QuestionEditor from '../components/QuestionEditor.vue';
 import { previewRouting, type Routing } from '../routing';
 import type { Definition, QuestionType } from '../../../api/src/domain';
@@ -18,6 +20,34 @@ const locked = computed(() => survey.value?.status !== 'draft');
 const serverRouting = ref<Routing | null>(null);
 const savedDefinition = ref('');
 const dirty = computed(() => JSON.stringify(definition.value) !== savedDefinition.value);
+protectDraft(dirty);
+const libraryTools = ref<InstanceType<typeof SurveyLibrary> | null>(null),
+  unsavedOpen = ref(false),
+  serverConflict = ref<any>(null);
+let settleUnsaved: ((value: boolean) => void) | null = null;
+async function ensureReady() {
+  if (!dirty.value) return true;
+  unsavedOpen.value = true;
+  return new Promise<boolean>((resolve) => (settleUnsaved = resolve));
+}
+async function resolveUnsaved(action: string) {
+  let ready = false;
+  if (action === 'save') ready = await save();
+  else if (action === 'discard') {
+    await load();
+    ready = !loadError.value;
+  }
+  unsavedOpen.value = false;
+  settleUnsaved?.(ready);
+  settleUnsaved = null;
+}
+async function applySurvey(result: any) {
+  survey.value = result;
+  definition.value = clone(result.draft);
+  savedDefinition.value = JSON.stringify(definition.value);
+  serverConflict.value = null;
+  await refreshRouting();
+}
 const routing = computed(() =>
   definition.value
     ? !dirty.value && serverRouting.value
@@ -69,6 +99,42 @@ async function load() {
   } catch (e: any) {
     loadError.value = e.message;
     ElMessage.error(e.message);
+  }
+}
+const spaces = ref<any[]>([]),
+  targetSpace = ref(''),
+  spaceBusy = ref(false);
+allCommunities()
+  .then((rows) => (spaces.value = rows))
+  .catch(() => {});
+watch(
+  () => survey.value?.communityId,
+  (value) => (targetSpace.value = value || ''),
+  { immediate: true },
+);
+async function changeSpace() {
+  if (spaceBusy.value || !(await ensureReady())) return;
+  const name = spaces.value.find((c) => c._id === targetSpace.value)?.name || '个人空间';
+  if (
+    !(await confirm(
+      `将问卷移至${name}？${targetSpace.value ? '目标社区成员将能查看问卷及统计；原社区成员将失去访问权限。' : '问卷将仅归你个人所有，原社区成员将失去访问权限。'}题目内容保持不变。`,
+    ))
+  )
+    return;
+  spaceBusy.value = true;
+  try {
+    const result = await api(`/surveys/${survey.value._id}/space`, 'PATCH', {
+      revision: survey.value.revision,
+      communityId: targetSpace.value || null,
+    });
+    await applySurvey(result);
+    ElMessage.success('问卷归属已更新');
+  } catch (e: any) {
+    ElMessage.error(
+      e.status === 409 ? '问卷已变化，请保留输入并重新读取后再修改归属。' : e.message,
+    );
+  } finally {
+    spaceBusy.value = false;
   }
 }
 async function goToQuestion(index: number) {
@@ -171,6 +237,18 @@ async function save() {
     return true;
   } catch (e: any) {
     ElMessage.error(e.message);
+    if (e.status === 404) {
+      definition.value = null;
+      survey.value = null;
+      serverRouting.value = null;
+      savedDefinition.value = 'null';
+      loadError.value = '问卷不存在或社区权限已失效';
+    }
+    if (e.status === 409) {
+      try {
+        serverConflict.value = await api('/surveys/' + route.params.id);
+      } catch {}
+    }
     return false;
   } finally {
     busy.value = false;
@@ -307,6 +385,23 @@ async function copy() {
         </div>
       </aside>
       <div class="editor-main">
+        <SurveyLibrary
+          ref="libraryTools"
+          :survey="survey"
+          :ensure-ready="ensureReady"
+          :apply-survey="applySurvey"
+        />
+        <el-alert
+          v-if="serverConflict"
+          title="问卷版本冲突：本地输入已保留，请比较后明确重新加载或继续编辑。"
+          type="error"
+          :closable="false"
+        />
+        <details v-if="serverConflict" class="phase-conflict">
+          <summary>查看服务器当前内容（不会覆盖本地）</summary>
+          <pre class="phase-json">{{ JSON.stringify(serverConflict.draft, null, 2) }}</pre>
+          <el-button @click="unsavedOpen = true">保存、取消或放弃本地输入</el-button>
+        </details>
         <el-alert
           v-if="routing && !routing.entryQuestionId && definition.questions.length"
           title="缺少填写入口：请至少保留一道通用题。"
@@ -355,6 +450,27 @@ async function copy() {
               </div>
             </el-form>
             <div class="deadline-row">
+              <label>问卷归属</label>
+              <el-select
+                v-model="targetSpace"
+                :empty-values="[null, undefined]"
+                :disabled="locked || survey.ownerId !== auth.user?.id || spaceBusy"
+              >
+                <el-option label="个人空间" value="" />
+                <el-option v-for="c in spaces" :key="c._id" :label="c.name" :value="c._id" />
+              </el-select>
+              <el-button
+                v-if="!locked && survey.ownerId === auth.user?.id"
+                :loading="spaceBusy"
+                :disabled="targetSpace === (survey.communityId || '')"
+                @click="changeSpace"
+              >
+                修改归属
+              </el-button>
+              <small v-if="locked">已发布问卷不能修改归属</small>
+              <small v-else-if="survey.ownerId !== auth.user?.id">仅创建者可修改归属</small>
+            </div>
+            <div class="deadline-row">
               <label>截止时间</label>
               <el-date-picker
                 v-model="deadline"
@@ -388,11 +504,25 @@ async function copy() {
             @focusin="selected = i"
             @pointerdown="selected = i"
           >
+            <div class="instance-source phase-actions">
+              <span v-if="item.source">来自题库 · 内容只读</span>
+              <span v-else>本地题</span>
+              <template v-if="item.source">
+                <router-link :to="'/questions/' + item.source.questionId">
+                  编辑题库中的原题 ↗
+                </router-link>
+                <el-button v-if="!locked" text @click="libraryTools?.detach(item)">
+                  脱离后本地编辑
+                </el-button>
+              </template>
+              <el-button text @click="libraryTools?.launch('save', item)">存入题库</el-button>
+            </div>
             <QuestionEditor
               :question="item"
               :index="i"
               :definition="definition"
-              :locked="locked"
+              :locked="locked || busy"
+              :content-locked="!!item.source"
               :routing-info="routingById.get(item.id)"
               @move="move"
               @remove="remove"
@@ -423,6 +553,25 @@ async function copy() {
         </div>
       </div>
     </div>
+    <el-dialog
+      v-model="unsavedOpen"
+      title="当前有未保存输入"
+      width="560px"
+      :close-on-click-modal="false"
+      @close="
+        settleUnsaved?.(false);
+        settleUnsaved = null;
+      "
+    >
+      <p>
+        接下来的操作需要服务器最新问卷。请保存、取消，或明确放弃未保存输入。保存失败会停止后续操作。
+      </p>
+      <template #footer>
+        <el-button :disabled="busy" @click="resolveUnsaved('cancel')">取消</el-button>
+        <el-button :disabled="busy" @click="resolveUnsaved('discard')">放弃未保存输入</el-button>
+        <el-button type="primary" :loading="busy" @click="resolveUnsaved('save')">先保存</el-button>
+      </template>
+    </el-dialog>
   </div>
   <div v-else-if="loadError" class="empty">
     <p>{{ loadError }}</p>

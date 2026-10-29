@@ -1,0 +1,2449 @@
+[
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/statistics?versionId=6ae2b05bc07ba1a3acefc81c&page=1",
+    "started": "2026-10-29T02:34:38.361Z",
+    "status": 200,
+    "delay": 400,
+    "finished": "2026-10-29T02:34:38.815Z",
+    "response": {
+      "questionId": "6ae2b05bc07ba1a3acefc81b",
+      "versionId": "6ae2b05bc07ba1a3acefc81c",
+      "content": {
+        "type": "text",
+        "title": "同一私人来源的空间隔离题",
+        "description": "仅独立测试数据库的浏览器夹具",
+        "required": true,
+        "options": [],
+        "rows": [],
+        "validation": {}
+      },
+      "scope": "personal",
+      "unit": "instance-answer",
+      "description": "同题重复实例按实例回答次数统计，不是去重人数；不同版本和独立副本不合并",
+      "answerCount": 21,
+      "page": 1,
+      "pageSize": 20,
+      "rows": [
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        }
+      ]
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/usage?versionId=6ae2b05bc07ba1a3acefc81c&page=1",
+    "started": "2026-10-29T02:34:38.366Z",
+    "status": 200,
+    "delay": 400,
+    "finished": "2026-10-29T02:34:38.830Z",
+    "response": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 21,
+      "rows": [
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "061a17fe4ed710bd15ea8a3b2d42a207"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "13f04c6dcb502be68bc77310b09ce11c"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "1b1f6bf7cbca1db0143a0b49d8cf1f57"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "280929b78f4ef61d0dcbb509bbe060bc"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "377bef38f768e0f79eb6b2bbf2bfe331"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "38f857f207aeef21e3392834acc256eb"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "5445d87d9d9c503bc2058dea428417f1"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "5ecfde5b190cd2ad4d60111335fd9875"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "66f3c283f1c6f4fac70e65c64f0a4a80"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "6bc7c7974f74d3a1d217324a662b1f51"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "6ec336e5fd212f0355f7d5d334f3fa05"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "806771cc27b030376ec74484b9495feb"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "8ccc68374cd06827d512e0f592536780"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "9d3621bb85382ebaddd0bd4839d5569e"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "b51282b7c2041ebf51fade4299580171"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "bbba196ea100772183868a7524312fc7"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "c4552a73cd46744e31a9d65238d5e74b"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "d99ad7de6945523cb7353d400ba1b6e7"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "e9b0f44eefdaaf461232cfc7b61a9e37"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "ecf722d7dcf484f42cc99bb44887c000"
+        }
+      ],
+      "visibility": "仅列有权访问的问卷，不返回隐藏引用数量或身份"
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/usage?versionId=6ae2b05bc07ba1a3acefc81c&page=2",
+    "started": "2026-10-29T02:34:57.719Z",
+    "status": 200,
+    "delay": 400,
+    "finished": "2026-10-29T02:34:58.154Z",
+    "response": {
+      "page": 2,
+      "pageSize": 20,
+      "total": 21,
+      "rows": [
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "f5bf6de4f8509cb9dfd962cd45975334"
+        }
+      ],
+      "visibility": "仅列有权访问的问卷，不返回隐藏引用数量或身份"
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/statistics?versionId=6ae2b05bc07ba1a3acefc81c&page=2",
+    "started": "2026-10-29T02:34:58.054Z",
+    "status": 200,
+    "delay": 400,
+    "finished": "2026-10-29T02:34:58.480Z",
+    "response": {
+      "questionId": "6ae2b05bc07ba1a3acefc81b",
+      "versionId": "6ae2b05bc07ba1a3acefc81c",
+      "content": {
+        "type": "text",
+        "title": "同一私人来源的空间隔离题",
+        "description": "仅独立测试数据库的浏览器夹具",
+        "required": true,
+        "options": [],
+        "rows": [],
+        "validation": {}
+      },
+      "scope": "personal",
+      "unit": "instance-answer",
+      "description": "同题重复实例按实例回答次数统计，不是去重人数；不同版本和独立副本不合并",
+      "answerCount": 21,
+      "page": 2,
+      "pageSize": 20,
+      "rows": [
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        }
+      ]
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/statistics?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7f5&page=1",
+    "started": "2026-10-29T02:35:16.088Z",
+    "status": 200,
+    "delay": 1200,
+    "finished": "2026-10-29T02:35:17.362Z",
+    "response": {
+      "questionId": "6ae2b05bc07ba1a3acefc81b",
+      "versionId": "6ae2b05bc07ba1a3acefc81c",
+      "content": {
+        "type": "text",
+        "title": "同一私人来源的空间隔离题",
+        "description": "仅独立测试数据库的浏览器夹具",
+        "required": true,
+        "options": [],
+        "rows": [],
+        "validation": {}
+      },
+      "scope": {
+        "communityId": "6ae2b05ac07ba1a3acefc7f5"
+      },
+      "unit": "instance-answer",
+      "description": "同题重复实例按实例回答次数统计，不是去重人数；不同版本和独立副本不合并",
+      "answerCount": 22,
+      "page": 1,
+      "pageSize": 20,
+      "rows": [
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        }
+      ]
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/usage?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7f5&page=1",
+    "started": "2026-10-29T02:35:16.090Z",
+    "status": 200,
+    "delay": 1200,
+    "finished": "2026-10-29T02:35:17.366Z",
+    "response": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 22,
+      "rows": [
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "005cf47a6958535c312804dbdb25e09a"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "013bbcb7fbda25adb4d978d65800327f"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "16c8bcc2544682a2b72c1772a3412793"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "18b3d101dc9d915aedeed241c37b5546"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "234df98fffca6d4c76608e69237272e2"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "29b777016ec0ba25653708d19824d07b"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "29f5117e2195e128da0dcbe17aa5f6a8"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "2a7580529d840f8cacc168e3bda822ac"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "445d8edddd57fa24e7d4fada10d558ae"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "68680fec99e3754b27da7dc057d7c903"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "6fc12263a2646175e814e1df0af04776"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "7bb5a0db089c6d699563dbbcb071f530"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "7eb6ca623ddc6fe020432dc723a8460d"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "95642a1db1011ba4a7b20314bb9c250b"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "9e1c998bbecd2ae5b8a64ff945df546f"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "9ea0c600d668810eedf57a100feca328"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "a8551996d5c2ede9b625886803cda12b"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "b8a9a02eadca074769c442a17533c645"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "cfa7c0dcf8498c1159c4555a2ec5f5a1"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "e978cfe5756586286057b0643d73d2de"
+        }
+      ],
+      "visibility": "仅列有权访问的问卷，不返回隐藏引用数量或身份"
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/usage?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7f5&page=2",
+    "started": "2026-10-29T02:35:17.897Z",
+    "status": 200,
+    "delay": 1200,
+    "finished": "2026-10-29T02:35:19.134Z",
+    "response": {
+      "page": 2,
+      "pageSize": 20,
+      "total": 22,
+      "rows": [
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "f2d3562cd386dce60b1217ec6677f92d"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "ff7a6febaa5c0084a6769ee81ae1cd7e"
+        }
+      ],
+      "visibility": "仅列有权访问的问卷，不返回隐藏引用数量或身份"
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/statistics?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7fa&page=1",
+    "started": "2026-10-29T02:35:39.295Z",
+    "status": 200,
+    "delay": 40,
+    "finished": "2026-10-29T02:35:39.384Z",
+    "response": {
+      "questionId": "6ae2b05bc07ba1a3acefc81b",
+      "versionId": "6ae2b05bc07ba1a3acefc81c",
+      "content": {
+        "type": "text",
+        "title": "同一私人来源的空间隔离题",
+        "description": "仅独立测试数据库的浏览器夹具",
+        "required": true,
+        "options": [],
+        "rows": [],
+        "validation": {}
+      },
+      "scope": {
+        "communityId": "6ae2b05ac07ba1a3acefc7fa"
+      },
+      "unit": "instance-answer",
+      "description": "同题重复实例按实例回答次数统计，不是去重人数；不同版本和独立副本不合并",
+      "answerCount": 23,
+      "page": 1,
+      "pageSize": 20,
+      "rows": [
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        }
+      ]
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/usage?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7fa&page=1",
+    "started": "2026-10-29T02:35:39.296Z",
+    "status": 200,
+    "delay": 40,
+    "finished": "2026-10-29T02:35:39.386Z",
+    "response": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 23,
+      "rows": [
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "05ebfb610fd496f1b20d81071cf42c09"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "132cb974cea721c836e49da7e1910ab6"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "14e7da7a665bd2ec068d70fcb6fd5655"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "1556be64e3d31a0729d6d11ba1d0f5c9"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "1bd51d5ae05033d47379134bc87aa5a2"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "2923d8bb46f0e250dd58dc3e4f2ebe63"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "3517e23d89e1662247fb78f914396e81"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "520c78307a86bf925d41300bed819d8a"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "547399caf2061622770afd57bce20d2c"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "5a594bcf7a3088b1578a5e2ac18b1f6c"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "5b8d5caa17d65d6e9d0e7b27b972599a"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "627db8848b658c79d99c31fd8dde19a6"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "6dcd29dab7afc336f68bf06530b99c45"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "894e5c3e0299c7676e461a340cf7a529"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "904cf04ef948c5832b92775901e38b34"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "9390a8a86a56121c3d0798ab086bff13"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "98e9e7cf14af2873da7ae24d910b6c54"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "c6762a70f916c71658ef953275dce527"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "d0c9ca27da0f5942df07d01bef03e0ed"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "e110b6491b9717dd7cc7b1ee818ac96a"
+        }
+      ],
+      "visibility": "仅列有权访问的问卷，不返回隐藏引用数量或身份"
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/usage?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7fa&page=2",
+    "started": "2026-10-29T02:35:39.885Z",
+    "status": 200,
+    "delay": 40,
+    "finished": "2026-10-29T02:35:39.970Z",
+    "response": {
+      "page": 2,
+      "pageSize": 20,
+      "total": 23,
+      "rows": [
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "e46b7c8445f5b53af8d3d01e9c42e65f"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "ebfbf46bc45cc98ad7699a79105daf8d"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "fdbaf39a7721095308d02842402190b0"
+        }
+      ],
+      "visibility": "仅列有权访问的问卷，不返回隐藏引用数量或身份"
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/statistics?versionId=6ae2b05fc07ba1a3acefcc22&communityId=6ae2b05ac07ba1a3acefc7fa&page=1",
+    "started": "2026-10-29T02:35:40.476Z",
+    "status": 200,
+    "delay": 40,
+    "finished": "2026-10-29T02:35:40.572Z",
+    "response": {
+      "questionId": "6ae2b05bc07ba1a3acefc81b",
+      "versionId": "6ae2b05fc07ba1a3acefcc22",
+      "content": {
+        "type": "text",
+        "title": "v2 暂无引用",
+        "description": "仅独立测试数据库的浏览器夹具",
+        "required": true,
+        "options": [],
+        "rows": [],
+        "validation": {}
+      },
+      "scope": {
+        "communityId": "6ae2b05ac07ba1a3acefc7fa"
+      },
+      "unit": "instance-answer",
+      "description": "同题重复实例按实例回答次数统计，不是去重人数；不同版本和独立副本不合并",
+      "answerCount": 0,
+      "page": 1,
+      "pageSize": 20,
+      "rows": []
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/usage?versionId=6ae2b05fc07ba1a3acefcc22&communityId=6ae2b05ac07ba1a3acefc7fa&page=1",
+    "started": "2026-10-29T02:35:40.477Z",
+    "status": 200,
+    "delay": 40,
+    "finished": "2026-10-29T02:35:40.576Z",
+    "response": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 0,
+      "rows": [],
+      "visibility": "仅列有权访问的问卷，不返回隐藏引用数量或身份"
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/statistics?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7fa&page=1",
+    "started": "2026-10-29T02:37:02.490Z",
+    "status": 200,
+    "delay": 40,
+    "finished": "2026-10-29T02:37:02.768Z",
+    "response": {
+      "questionId": "6ae2b05bc07ba1a3acefc81b",
+      "versionId": "6ae2b05bc07ba1a3acefc81c",
+      "content": {
+        "type": "text",
+        "title": "同一私人来源的空间隔离题",
+        "description": "仅独立测试数据库的浏览器夹具",
+        "required": true,
+        "options": [],
+        "rows": [],
+        "validation": {}
+      },
+      "scope": {
+        "communityId": "6ae2b05ac07ba1a3acefc7fa"
+      },
+      "unit": "instance-answer",
+      "description": "同题重复实例按实例回答次数统计，不是去重人数；不同版本和独立副本不合并",
+      "answerCount": 23,
+      "page": 1,
+      "pageSize": 20,
+      "rows": [
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        }
+      ]
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/usage?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7fa&page=1",
+    "started": "2026-10-29T02:37:02.579Z",
+    "status": 200,
+    "delay": 40,
+    "finished": "2026-10-29T02:37:02.783Z",
+    "response": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 23,
+      "rows": [
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "05ebfb610fd496f1b20d81071cf42c09"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "132cb974cea721c836e49da7e1910ab6"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "14e7da7a665bd2ec068d70fcb6fd5655"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "1556be64e3d31a0729d6d11ba1d0f5c9"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "1bd51d5ae05033d47379134bc87aa5a2"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "2923d8bb46f0e250dd58dc3e4f2ebe63"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "3517e23d89e1662247fb78f914396e81"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "520c78307a86bf925d41300bed819d8a"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "547399caf2061622770afd57bce20d2c"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "5a594bcf7a3088b1578a5e2ac18b1f6c"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "5b8d5caa17d65d6e9d0e7b27b972599a"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "627db8848b658c79d99c31fd8dde19a6"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "6dcd29dab7afc336f68bf06530b99c45"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "894e5c3e0299c7676e461a340cf7a529"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "904cf04ef948c5832b92775901e38b34"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "9390a8a86a56121c3d0798ab086bff13"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "98e9e7cf14af2873da7ae24d910b6c54"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "c6762a70f916c71658ef953275dce527"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "d0c9ca27da0f5942df07d01bef03e0ed"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "e110b6491b9717dd7cc7b1ee818ac96a"
+        }
+      ],
+      "visibility": "仅列有权访问的问卷，不返回隐藏引用数量或身份"
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/statistics?versionId=6ae2b05bc07ba1a3acefc81c&page=1",
+    "started": "2026-10-29T02:37:03.452Z",
+    "status": 200,
+    "delay": 400,
+    "finished": "2026-10-29T02:37:03.892Z",
+    "response": {
+      "questionId": "6ae2b05bc07ba1a3acefc81b",
+      "versionId": "6ae2b05bc07ba1a3acefc81c",
+      "content": {
+        "type": "text",
+        "title": "同一私人来源的空间隔离题",
+        "description": "仅独立测试数据库的浏览器夹具",
+        "required": true,
+        "options": [],
+        "rows": [],
+        "validation": {}
+      },
+      "scope": "personal",
+      "unit": "instance-answer",
+      "description": "同题重复实例按实例回答次数统计，不是去重人数；不同版本和独立副本不合并",
+      "answerCount": 21,
+      "page": 1,
+      "pageSize": 20,
+      "rows": [
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:00.335Z",
+          "value": "personal 固定版本回答"
+        }
+      ]
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/usage?versionId=6ae2b05bc07ba1a3acefc81c&page=1",
+    "started": "2026-10-29T02:37:03.455Z",
+    "status": 200,
+    "delay": 400,
+    "finished": "2026-10-29T02:37:03.898Z",
+    "response": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 21,
+      "rows": [
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "061a17fe4ed710bd15ea8a3b2d42a207"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "13f04c6dcb502be68bc77310b09ce11c"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "1b1f6bf7cbca1db0143a0b49d8cf1f57"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "280929b78f4ef61d0dcbb509bbe060bc"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "377bef38f768e0f79eb6b2bbf2bfe331"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "38f857f207aeef21e3392834acc256eb"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "5445d87d9d9c503bc2058dea428417f1"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "5ecfde5b190cd2ad4d60111335fd9875"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "66f3c283f1c6f4fac70e65c64f0a4a80"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "6bc7c7974f74d3a1d217324a662b1f51"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "6ec336e5fd212f0355f7d5d334f3fa05"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "806771cc27b030376ec74484b9495feb"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "8ccc68374cd06827d512e0f592536780"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "9d3621bb85382ebaddd0bd4839d5569e"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "b51282b7c2041ebf51fade4299580171"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "bbba196ea100772183868a7524312fc7"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "c4552a73cd46744e31a9d65238d5e74b"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "d99ad7de6945523cb7353d400ba1b6e7"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "e9b0f44eefdaaf461232cfc7b61a9e37"
+        },
+        {
+          "surveyId": "6ae2b05bc07ba1a3acefc822",
+          "title": "personal 空间专属引用",
+          "surveyVersionId": "6ae2b05bc07ba1a3acefc8a4",
+          "kind": "published",
+          "instanceId": "ecf722d7dcf484f42cc99bb44887c000"
+        }
+      ],
+      "visibility": "仅列有权访问的问卷，不返回隐藏引用数量或身份"
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/usage?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7fa&page=1",
+    "started": "2026-10-29T02:37:05.025Z",
+    "status": 200,
+    "delay": 40,
+    "finished": "2026-10-29T02:37:05.116Z",
+    "response": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 23,
+      "rows": [
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "05ebfb610fd496f1b20d81071cf42c09"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "132cb974cea721c836e49da7e1910ab6"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "14e7da7a665bd2ec068d70fcb6fd5655"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "1556be64e3d31a0729d6d11ba1d0f5c9"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "1bd51d5ae05033d47379134bc87aa5a2"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "2923d8bb46f0e250dd58dc3e4f2ebe63"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "3517e23d89e1662247fb78f914396e81"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "520c78307a86bf925d41300bed819d8a"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "547399caf2061622770afd57bce20d2c"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "5a594bcf7a3088b1578a5e2ac18b1f6c"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "5b8d5caa17d65d6e9d0e7b27b972599a"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "627db8848b658c79d99c31fd8dde19a6"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "6dcd29dab7afc336f68bf06530b99c45"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "894e5c3e0299c7676e461a340cf7a529"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "904cf04ef948c5832b92775901e38b34"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "9390a8a86a56121c3d0798ab086bff13"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "98e9e7cf14af2873da7ae24d910b6c54"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "c6762a70f916c71658ef953275dce527"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "d0c9ca27da0f5942df07d01bef03e0ed"
+        },
+        {
+          "surveyId": "6ae2b05dc07ba1a3acefcaa9",
+          "title": "B 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7fa",
+          "surveyVersionId": "6ae2b05ec07ba1a3acefcb7f",
+          "kind": "published",
+          "instanceId": "e110b6491b9717dd7cc7b1ee818ac96a"
+        }
+      ],
+      "visibility": "仅列有权访问的问卷，不返回隐藏引用数量或身份"
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/statistics?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7fa&page=1",
+    "started": "2026-10-29T02:37:05.023Z",
+    "status": 200,
+    "delay": 40,
+    "finished": "2026-10-29T02:37:05.132Z",
+    "response": {
+      "questionId": "6ae2b05bc07ba1a3acefc81b",
+      "versionId": "6ae2b05bc07ba1a3acefc81c",
+      "content": {
+        "type": "text",
+        "title": "同一私人来源的空间隔离题",
+        "description": "仅独立测试数据库的浏览器夹具",
+        "required": true,
+        "options": [],
+        "rows": [],
+        "validation": {}
+      },
+      "scope": {
+        "communityId": "6ae2b05ac07ba1a3acefc7fa"
+      },
+      "unit": "instance-answer",
+      "description": "同题重复实例按实例回答次数统计，不是去重人数；不同版本和独立副本不合并",
+      "answerCount": 23,
+      "page": 1,
+      "pageSize": 20,
+      "rows": [
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:03.262Z",
+          "value": "B 固定版本回答"
+        }
+      ]
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/statistics?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7f5&page=1",
+    "started": "2026-10-29T02:37:04.161Z",
+    "status": 200,
+    "delay": 1200,
+    "finished": "2026-10-29T02:37:05.411Z",
+    "response": {
+      "questionId": "6ae2b05bc07ba1a3acefc81b",
+      "versionId": "6ae2b05bc07ba1a3acefc81c",
+      "content": {
+        "type": "text",
+        "title": "同一私人来源的空间隔离题",
+        "description": "仅独立测试数据库的浏览器夹具",
+        "required": true,
+        "options": [],
+        "rows": [],
+        "validation": {}
+      },
+      "scope": {
+        "communityId": "6ae2b05ac07ba1a3acefc7f5"
+      },
+      "unit": "instance-answer",
+      "description": "同题重复实例按实例回答次数统计，不是去重人数；不同版本和独立副本不合并",
+      "answerCount": 22,
+      "page": 1,
+      "pageSize": 20,
+      "rows": [
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        }
+      ]
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/usage?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7f5&page=1",
+    "started": "2026-10-29T02:37:04.162Z",
+    "status": 200,
+    "delay": 1200,
+    "finished": "2026-10-29T02:37:05.417Z",
+    "response": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 22,
+      "rows": [
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "005cf47a6958535c312804dbdb25e09a"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "013bbcb7fbda25adb4d978d65800327f"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "16c8bcc2544682a2b72c1772a3412793"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "18b3d101dc9d915aedeed241c37b5546"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "234df98fffca6d4c76608e69237272e2"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "29b777016ec0ba25653708d19824d07b"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "29f5117e2195e128da0dcbe17aa5f6a8"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "2a7580529d840f8cacc168e3bda822ac"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "445d8edddd57fa24e7d4fada10d558ae"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "68680fec99e3754b27da7dc057d7c903"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "6fc12263a2646175e814e1df0af04776"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "7bb5a0db089c6d699563dbbcb071f530"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "7eb6ca623ddc6fe020432dc723a8460d"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "95642a1db1011ba4a7b20314bb9c250b"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "9e1c998bbecd2ae5b8a64ff945df546f"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "9ea0c600d668810eedf57a100feca328"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "a8551996d5c2ede9b625886803cda12b"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "b8a9a02eadca074769c442a17533c645"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "cfa7c0dcf8498c1159c4555a2ec5f5a1"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "e978cfe5756586286057b0643d73d2de"
+        }
+      ],
+      "visibility": "仅列有权访问的问卷，不返回隐藏引用数量或身份"
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/usage?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7f5&page=1",
+    "started": "2026-10-29T02:37:30.944Z",
+    "status": 200,
+    "delay": 1200,
+    "finished": "2026-10-29T02:37:32.218Z",
+    "response": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 22,
+      "rows": [
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "005cf47a6958535c312804dbdb25e09a"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "013bbcb7fbda25adb4d978d65800327f"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "16c8bcc2544682a2b72c1772a3412793"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "18b3d101dc9d915aedeed241c37b5546"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "234df98fffca6d4c76608e69237272e2"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "29b777016ec0ba25653708d19824d07b"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "29f5117e2195e128da0dcbe17aa5f6a8"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "2a7580529d840f8cacc168e3bda822ac"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "445d8edddd57fa24e7d4fada10d558ae"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "68680fec99e3754b27da7dc057d7c903"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "6fc12263a2646175e814e1df0af04776"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "7bb5a0db089c6d699563dbbcb071f530"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "7eb6ca623ddc6fe020432dc723a8460d"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "95642a1db1011ba4a7b20314bb9c250b"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "9e1c998bbecd2ae5b8a64ff945df546f"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "9ea0c600d668810eedf57a100feca328"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "a8551996d5c2ede9b625886803cda12b"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "b8a9a02eadca074769c442a17533c645"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "cfa7c0dcf8498c1159c4555a2ec5f5a1"
+        },
+        {
+          "surveyId": "6ae2b05cc07ba1a3acefc93d",
+          "title": "A 空间专属引用",
+          "communityId": "6ae2b05ac07ba1a3acefc7f5",
+          "surveyVersionId": "6ae2b05dc07ba1a3acefca0a",
+          "kind": "published",
+          "instanceId": "e978cfe5756586286057b0643d73d2de"
+        }
+      ],
+      "visibility": "仅列有权访问的问卷，不返回隐藏引用数量或身份"
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/statistics?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7f5&page=1",
+    "started": "2026-10-29T02:37:30.943Z",
+    "status": 200,
+    "delay": 1200,
+    "finished": "2026-10-29T02:37:32.221Z",
+    "response": {
+      "questionId": "6ae2b05bc07ba1a3acefc81b",
+      "versionId": "6ae2b05bc07ba1a3acefc81c",
+      "content": {
+        "type": "text",
+        "title": "同一私人来源的空间隔离题",
+        "description": "仅独立测试数据库的浏览器夹具",
+        "required": true,
+        "options": [],
+        "rows": [],
+        "validation": {}
+      },
+      "scope": {
+        "communityId": "6ae2b05ac07ba1a3acefc7f5"
+      },
+      "unit": "instance-answer",
+      "description": "同题重复实例按实例回答次数统计，不是去重人数；不同版本和独立副本不合并",
+      "answerCount": 22,
+      "page": 1,
+      "pageSize": 20,
+      "rows": [
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        },
+        {
+          "submittedAt": "2026-10-29T02:33:01.656Z",
+          "value": "A 固定版本回答"
+        }
+      ]
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/statistics?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7f5&page=1",
+    "started": "2026-10-29T02:38:20.992Z",
+    "status": 404,
+    "delay": 1200,
+    "finished": "2026-10-29T02:38:22.220Z",
+    "response": {
+      "code": "NOT_FOUND",
+      "message": "资源不存在或无权访问"
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/usage?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7f5&page=1",
+    "started": "2026-10-29T02:38:20.993Z",
+    "status": 404,
+    "delay": 1200,
+    "finished": "2026-10-29T02:38:22.223Z",
+    "response": {
+      "code": "NOT_FOUND",
+      "message": "资源不存在或无权访问"
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/statistics?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7fa&page=1",
+    "started": "2026-10-29T02:38:45.404Z",
+    "status": 404,
+    "delay": 40,
+    "finished": "2026-10-29T02:38:45.473Z",
+    "response": {
+      "code": "NOT_FOUND",
+      "message": "资源不存在或无权访问"
+    }
+  },
+  {
+    "url": "/api/questions/6ae2b05bc07ba1a3acefc81b/usage?versionId=6ae2b05bc07ba1a3acefc81c&communityId=6ae2b05ac07ba1a3acefc7fa&page=1",
+    "started": "2026-10-29T02:38:45.405Z",
+    "status": 404,
+    "delay": 40,
+    "finished": "2026-10-29T02:38:45.476Z",
+    "response": {
+      "code": "NOT_FOUND",
+      "message": "资源不存在或无权访问"
+    }
+  }
+]

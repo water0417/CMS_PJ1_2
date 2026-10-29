@@ -1,0 +1,42 @@
+{
+  "time": "2026-10-29T03:26:42.262Z",
+  "database": "survey_studio_usage_scope_test_1793244396191",
+  "results": [
+    {
+      "name": "个人空间过滤在分页前执行，21实例两页及total一致",
+      "result": "PASS"
+    },
+    {
+      "name": "社区A/B严格隔离，其他空间不占分页且不泄露名称",
+      "result": "PASS"
+    },
+    {
+      "name": "非成员及未接受邀请者拒绝社区使用和统计查询",
+      "result": "PASS"
+    },
+    {
+      "name": "私人来源固定版本授权保留，不授予私人题库和其他版本权限",
+      "result": "PASS"
+    },
+    {
+      "name": "副本及其他用户私人问卷不进入原题使用结果",
+      "result": "PASS"
+    },
+    {
+      "name": "无引用题返回空列表，空和缺失communityId兼容",
+      "result": "PASS"
+    },
+    {
+      "name": "发布及归档沿用原口径，回答统计按空间聚合不变",
+      "result": "PASS"
+    },
+    {
+      "name": "题目版本归属不匹配被拒绝，独立副本使用单独计数",
+      "result": "PASS"
+    },
+    {
+      "name": "移除和退出撤销社区访问，个人固定实例仍可读",
+      "result": "PASS"
+    }
+  ]
+}

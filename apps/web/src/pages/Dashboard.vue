@@ -1,18 +1,20 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import { auth, api } from '../api';
 import { workspace, refreshSurveys, statusName, type SurveySummary } from '../workspace';
+import { allCommunities, query } from '../phase2';
 import ArchiveTitle from '../components/ArchiveTitle.vue';
 defineEmits<{ create: [] }>();
-const router = useRouter(),
+const route = useRoute(),
+  router = useRouter(),
   loading = ref(true),
   error = ref(''),
   page = ref(1);
 const deleting = ref<string | null>(null);
 async function remove(s: SurveySummary) {
-  if (deleting.value) return;
+  if (deleting.value || !manage(s)) return;
   deleting.value = s._id;
   try {
     await ElMessageBox.confirm(
@@ -51,17 +53,34 @@ watch(
   () => (page.value = 1),
 );
 watch(pageCount, (n) => (page.value = Math.min(page.value, n)));
+const manage = (s: SurveySummary) =>
+  !s.communityId || s.ownerId === auth.user?.id || workspace.communityAdminId === auth.user?.id;
+const communityName = ref('');
+let loadSequence = 0;
 async function load() {
+  const request = ++loadSequence, scope = String(route.query.communityId || '');
   loading.value = true;
   error.value = '';
   try {
+    workspace.surveys = [];
+    workspace.communityId = scope;
+    workspace.communityAdminId = '';
+    communityName.value = '';
+    if (workspace.communityId) {
+      const c = (await allCommunities()).find((c) => c._id === scope);
+      if (request !== loadSequence) return;
+      if (!c) throw new Error('社区不存在或你已失去成员权限');
+      workspace.communityAdminId = c.adminId;
+      communityName.value = c.name;
+    }
     await refreshSurveys();
   } catch (e: any) {
-    error.value = e.message;
+    if (request === loadSequence) error.value = e.message;
   } finally {
-    loading.value = false;
+    if (request === loadSequence) loading.value = false;
   }
 }
+watch(() => route.query.communityId, load);
 onMounted(() => {
   if (!auth.user) {
     router.replace('/login');
@@ -84,6 +103,10 @@ function setFilter(value: string) {
 </script>
 <template>
   <div class="dashboard-view">
+    <div v-if="workspace.communityId" class="community-context">
+      社区空间 · {{ communityName }}
+      <router-link to="/">返回个人问卷</router-link>
+    </div>
     <section class="hero">
       <div class="hero-kicker">
         <span class="volume">VOLUME 01</span>
@@ -123,7 +146,11 @@ function setFilter(value: string) {
             <circle cx="8" cy="8" r="5" stroke="currentColor" />
             <path d="M12 12L17 17" stroke="currentColor" />
           </svg>
-          <input v-model="workspace.search" placeholder="搜索问卷…" aria-label="搜索问卷标题" />
+          <input
+            v-model="workspace.search"
+            placeholder="搜索已载入问卷…"
+            aria-label="搜索问卷标题"
+          />
         </label>
       </div>
       <div v-if="error" class="dashboard-empty">
@@ -146,9 +173,16 @@ function setFilter(value: string) {
       <div v-else class="cards">
         <article v-for="(s, i) in visible" :key="s._id" :class="['card', 'issue-' + (i % 3)]">
           <router-link
-            :to="'/editor/' + s._id"
+            :to="
+              manage(s)
+                ? '/editor/' + s._id
+                : s.status === 'draft' ? '/communities/' + s.communityId : '/statistics/' + s._id + query({ communityId: s.communityId })
+            "
             class="survey-cover-link"
-            :aria-label="(s.status === 'draft' ? '编辑问卷：' : '查看问卷：') + s.draft.title"
+            :aria-label="
+              (manage(s) ? (s.status === 'draft' ? '编辑问卷：' : '查看问卷：') : s.status === 'draft' ? '社区草稿（尚无统计）：' : '查看统计：') +
+              s.draft.title
+            "
           >
             <div class="issue-cover" aria-hidden="true">
               <div class="issue-top">
@@ -182,10 +216,23 @@ function setFilter(value: string) {
             <div class="survey-links">
               <template v-if="s.status !== 'draft'">
                 <button @click="copy(s)" aria-label="复制填写链接">分享</button>
-                <router-link :to="'/statistics/' + s._id">统计 ↗</router-link>
+                <router-link :to="'/statistics/' + s._id + query({ communityId: s.communityId })">
+                  统计 ↗
+                </router-link>
               </template>
-              <router-link v-else :to="'/editor/' + s._id">继续编辑 ↗</router-link>
+              <router-link
+                v-else-if="manage(s)"
+                :to="
+                  manage(s)
+                    ? '/editor/' + s._id
+                    : '/statistics/' + s._id + query({ communityId: s.communityId })
+                "
+              >
+                继续编辑 ↗
+              </router-link>
+              <span v-else>仅创建者和管理员可编辑</span>
               <button
+                v-if="manage(s)"
                 :disabled="!!deleting"
                 :aria-label="'删除问卷：' + s.draft.title"
                 @click="remove(s)"

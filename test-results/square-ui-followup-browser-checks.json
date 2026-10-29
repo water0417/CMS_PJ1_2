@@ -1,0 +1,62 @@
+{
+  "database": "survey_studio_square_ui_followup_20261029",
+  "checks": [
+    {
+      "name": "九种题型与关键词分别组合查询，真实返回每种1条",
+      "result": "PASS"
+    },
+    {
+      "name": "重置恢复34条并清空标题/题型/mine",
+      "result": "PASS"
+    },
+    {
+      "name": "关键词分页24条20+4；page2勾mine回1总数3",
+      "result": "PASS"
+    },
+    {
+      "name": "无匹配搜索总数0及明确无结果状态",
+      "result": "PASS"
+    },
+    {
+      "name": "真实接受B/拒绝C后邀请提醒2→1→0，打开不清除",
+      "result": "PASS"
+    },
+    {
+      "name": "B概览503显示错误和重试，不造0计数；A真实概览与入口不受影响",
+      "result": "PASS"
+    },
+    {
+      "name": "延迟旧分页搜索响应，新无匹配搜索完成后仍显示0条",
+      "result": "PASS"
+    },
+    {
+      "name": "持续REQUEST404显示未知/暂停提示，最后显式失败后72.61秒无自动重复",
+      "result": "PASS"
+    },
+    {
+      "name": "恢复服务后手动刷新邀请与社区概览，真实数量和入口恢复",
+      "result": "PASS"
+    },
+    {
+      "name": "真实移除成员后社区详情NOT_FOUND，隐藏题库问卷成员及管理操作",
+      "result": "PASS"
+    },
+    {
+      "name": "社区A列表与详情真实概览正常；普通成员无管理员邀请入口",
+      "result": "PASS"
+    },
+    {
+      "name": "390px窄屏筛选栏、社区卡片及邀请错误面板无横向溢出；1280×720桌面检查",
+      "result": "PASS"
+    }
+  ],
+  "failurePause": {
+    "lastFailureAt": "2026-10-29T09:19:10.718Z",
+    "observedAt": "2026-10-29T09:20:23.328Z",
+    "count": 4,
+    "elapsedSeconds": 72.61
+  },
+  "unverified": [
+    "实际浏览器后台暂停与退出登录定时器清理；由单元测试覆盖"
+  ]
+}

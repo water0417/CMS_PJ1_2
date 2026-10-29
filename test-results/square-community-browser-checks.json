@@ -1,0 +1,114 @@
+{
+  "failurePause": {
+    "lastFailureAt": "2026-10-29T05:40:22.034Z",
+    "observedAt": "2026-10-29T05:41:58.315Z",
+    "elapsedSeconds": 96.283,
+    "failedRequestCount": 4,
+    "expected": "No new automatic failure request after last manual/reload failure for over 60s"
+  },
+  "checks": [
+    {
+      "name": "九种题型逐一在浏览器筛选",
+      "result": "PASS",
+      "observed": [
+        {
+          "type": "single_choice",
+          "rows": 1
+        },
+        {
+          "type": "multiple_choice",
+          "rows": 1
+        },
+        {
+          "type": "text",
+          "rows": 1
+        },
+        {
+          "type": "number",
+          "rows": 1
+        },
+        {
+          "type": "matrix",
+          "rows": 1
+        },
+        {
+          "type": "ranking",
+          "rows": 1
+        },
+        {
+          "type": "time",
+          "rows": 1
+        },
+        {
+          "type": "slider",
+          "rows": 1
+        },
+        {
+          "type": "color",
+          "rows": 1
+        }
+      ]
+    },
+    {
+      "name": "延迟旧搜索不覆盖新搜索",
+      "result": "PASS",
+      "observed": "旧分页搜索晚于无匹配搜索返回，页面仍为0条",
+      "screenshot": "square-empty.jpg"
+    },
+    {
+      "name": "邀请接受和拒绝更新提醒",
+      "result": "PASS",
+      "observed": "待处理2→1→0，读列表不清零"
+    },
+    {
+      "name": "服务故障有错误、暂停并可手动恢复",
+      "result": "PASS",
+      "observed": "404故障显示未知状态而非无邀请，取消故障后手动重试得到0",
+      "screenshot": "invitation-error.jpg"
+    },
+    {
+      "name": "部分社区卡片失败独立展示",
+      "result": "PASS",
+      "observed": "B概览503，A及D仍返回真实计数",
+      "screenshot": "community-partial-error.jpg"
+    },
+    {
+      "name": "真实成员被移除后无社区操作入口",
+      "result": "PASS",
+      "observed": "NOT_FOUND，community-tabs数量0",
+      "screenshot": "community-forbidden.jpg"
+    },
+    {
+      "name": "390窄屏筛选及社区卡片无横向溢出",
+      "result": "PASS",
+      "observed": {
+        "width": 390,
+        "documentScrollWidth": 390,
+        "searchInputWidth": 227,
+        "cardRight": 352
+      },
+      "screenshots": [
+        "square-mobile.jpg",
+        "community-mobile.jpg"
+      ]
+    },
+    {
+      "name": "1440桌面布局",
+      "result": "PASS",
+      "observed": {
+        "width": 1440,
+        "documentScrollWidth": 1440
+      },
+      "screenshots": [
+        "square-desktop.jpg",
+        "community-desktop.jpg"
+      ]
+    },
+    {
+      "name": "修正后无新增浏览器运行异常",
+      "result": "PASS",
+      "observed": []
+    }
+  ],
+  "database": "survey_studio_square_ui_20261029_1335"
+}

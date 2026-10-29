@@ -1,0 +1,1 @@
+PASS 1 v1→v2 relationship; 2 surveys independently select v1/v2; 3 restore v1→v3 preserves v2; 4 save-as independent with readable authorized origin; 5 23 versions cross-page exact relationships; 6 private source denied to outsider

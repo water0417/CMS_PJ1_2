@@ -1,0 +1,40 @@
+[
+  {
+    "status": 200,
+    "body": {
+      "pendingCount": 0
+    },
+    "path": "/community-invitations/pending-count"
+  },
+  {
+    "status": 200,
+    "body": {
+      "id": "6ae2b05ac07ba1a3acefc7f5",
+      "name": "空间 A 编辑部",
+      "role": "admin",
+      "memberCount": 1,
+      "questionCount": 0,
+      "surveyCount": 1,
+      "permissions": {
+        "viewLibrary": true,
+        "viewSurveys": true,
+        "viewMembers": true,
+        "manageMembers": true
+      },
+      "endpoints": {
+        "library": "/api/questions?communityId=6ae2b05ac07ba1a3acefc7f5",
+        "surveys": "/api/surveys?communityId=6ae2b05ac07ba1a3acefc7f5",
+        "members": "/api/communities/6ae2b05ac07ba1a3acefc7f5/members"
+      }
+    },
+    "path": "/communities/6ae2b05ac07ba1a3acefc7f5/overview"
+  },
+  {
+    "status": 404,
+    "body": {
+      "code": "NOT_FOUND",
+      "message": "资源不存在或无权访问"
+    },
+    "path": "/communities/000000000000000000000000/overview"
+  }
+]

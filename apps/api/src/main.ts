@@ -25,6 +25,7 @@ import path from 'node:path';
 import { existsSync } from 'node:fs';
 import { connectDatabase } from './database';
 import { DomainError } from './domain';
+import { LibraryApi } from './library-api';
 import * as service from './service';
 const uid = (req: Request) => service.authenticate(req.cookies?.survey_session);
 @Catch()
@@ -74,11 +75,18 @@ class Api {
   @Get('auth/me') async me(@Req() r: Request) {
     return service.me(await uid(r));
   }
-  @Get('surveys') async list(@Req() r: Request) {
-    return service.listSurveys(await uid(r));
+  @Get('surveys') async list(@Req() r: Request, @Query('communityId') communityId?: string) {
+    return service.listSurveys(await uid(r), communityId);
   }
   @Post('surveys') async create(@Req() r: Request, @Body() b: any) {
-    return service.createSurvey(await uid(r), b.title);
+    return service.createSurvey(await uid(r), b.title, b.communityId);
+  }
+  @Patch('surveys/:id/space') async space(
+    @Req() r: Request,
+    @Param('id') id: string,
+    @Body() b: any,
+  ) {
+    return service.changeSurveySpace(id, await uid(r), b);
   }
   @Delete('surveys/:id') async remove(@Req() r: Request, @Param('id') id: string, @Body() b: any) {
     return service.deleteSurvey(id, await uid(r), b?.revision);
@@ -175,7 +183,7 @@ class Api {
     return service.answerPage(id, await uid(r), qid, Number(page ?? 1));
   }
 }
-@Module({ controllers: [Api] })
+@Module({ controllers: [Api, LibraryApi] })
 class AppModule {}
 async function main() {
   await connectDatabase(

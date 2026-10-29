@@ -1,0 +1,85 @@
+{
+  "pid": 61296,
+  "cwd": "D:\\Users\\21264\\Desktop\\DMS\\大作业1第一阶段\\apps\\api",
+  "executable": "C:\\Program Files\\nodejs\\node.exe",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "dist/main.js"
+  ],
+  "startedAt": "2026-10-29T10:53:55.877643",
+  "port": "3107",
+  "mongodbUri": "mongodb://127.0.0.1:27018/survey_studio_usage_ui_20261029?replicaSet=rs0&directConnection=true",
+  "diskLibraryApiModifiedAt": "2026-10-29T13:28:38.541414",
+  "diskLibraryApiSha256": "b759e76ab704367958a9e5b1cdd653f9c650fedd9b8af8c3d419d26ade9c49d1",
+  "before": {
+    "status": 404,
+    "code": "REQUEST",
+    "message": "Cannot GET /api/community-invitations/pending-count"
+  },
+  "after": {
+    "verifiedAt": "2026-10-29T05:30:29.193Z",
+    "user": {
+      "id": "6ae2b05ac07ba1a3acefc7e8",
+      "username": "scope_owner"
+    },
+    "invitations": {
+      "url": "/community-invitations/pending-count",
+      "status": 200,
+      "data": {
+        "pendingCount": 0
+      }
+    },
+    "overview": {
+      "url": "/communities/6ae2b05ac07ba1a3acefc7f5/overview",
+      "status": 200,
+      "data": {
+        "id": "6ae2b05ac07ba1a3acefc7f5",
+        "name": "空间 A 编辑部",
+        "role": "admin",
+        "memberCount": 1,
+        "questionCount": 0,
+        "surveyCount": 1,
+        "permissions": {
+          "viewLibrary": true,
+          "viewSurveys": true,
+          "viewMembers": true,
+          "manageMembers": true
+        },
+        "endpoints": {
+          "library": "/api/questions?communityId=6ae2b05ac07ba1a3acefc7f5",
+          "surveys": "/api/surveys?communityId=6ae2b05ac07ba1a3acefc7f5",
+          "members": "/api/communities/6ae2b05ac07ba1a3acefc7f5/members"
+        }
+      }
+    },
+    "nonexistentCommunity": {
+      "url": "/communities/000000000000000000000000/overview",
+      "status": 404,
+      "data": {
+        "code": "NOT_FOUND",
+        "message": "资源不存在或无权访问"
+      }
+    },
+    "unauthenticated": {
+      "url": "/community-invitations/pending-count",
+      "status": 401,
+      "data": {
+        "code": "UNAUTHORIZED",
+        "message": "请先登录"
+      }
+    }
+  },
+  "restartedPid": 67132,
+  "controlledRestart": {
+    "portUnchanged": true,
+    "databaseUnchanged": true,
+    "stoppedOldPid": 61296,
+    "otherNodeProcessesUntouched": true,
+    "controllerRegistration": "Api + LibraryApi in main.ts; startup log maps both GET routes",
+    "proxy": "Direct3107 path /api; existing3108 proxy forwards unchanged to3107; Vite development proxy5173 points to3000 and was not changed"
+  },
+  "temporaryUiServicesStopped": {
+    "apiPort": 3121,
+    "proxyPort": 3122
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-28T07:23:16.877Z",
+  "final": {
+    "environment": "Docker MongoDB",
+    "port": 27018,
+    "replicaSet": "rs0",
+    "mongoVersion": "7.0.45",
+    "nodeVersion": "v22.23.4",
+    "phase2Groups": 22,
+    "legacyGroups": 28
+  },
+  "baseline": {
+    "environment": "native isolated MongoDB",
+    "port": 27019,
+    "replicaSet": "phase2test",
+    "mongoVersion": "7.0.43",
+    "legacyGroups": 28
+  }
+}

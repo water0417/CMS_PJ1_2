@@ -40,6 +40,7 @@ export interface Question {
     highLabel?: string;
   };
   jumpRules: Rule[];
+  source?: { questionId: string; versionId: string };
 }
 export interface Definition {
   title: string;
@@ -228,6 +229,20 @@ export function validateDefinition(d: Definition): void {
   };
   for (const q of d.questions) {
     if (!q || typeof q !== 'object') fail('QUESTION', '题目结构不合法');
+    if (q.source !== undefined) {
+      const source = q.source;
+      if (
+        !source ||
+        typeof source !== 'object' ||
+        Array.isArray(source) ||
+        Object.keys(source).sort().join(',') !== 'questionId,versionId' ||
+        typeof source.questionId !== 'string' ||
+        !/^[a-f\d]{24}$/i.test(source.questionId) ||
+        typeof source.versionId !== 'string' ||
+        !/^[a-f\d]{24}$/i.test(source.versionId)
+      )
+        fail('SOURCE', '题库来源必须包含有效的questionId和versionId');
+    }
     if (Object.hasOwn(q, 'displayCondition'))
       fail(
         'UNSUPPORTED_FIELD',

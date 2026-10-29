@@ -1,0 +1,12 @@
+
+> survey-studio@1.0.0 test:square
+> tsx tests/phase2-square.ts
+
+PASS 九种题型单独筛选和公开固定内容返回兼容
+PASS 标题包含搜索、无结果、长度及非法题型
+PASS 搜索正则特殊字符按字面量转义
+PASS 原题更新不改变公开旧标题或题型检索，撤回排除
+PASS 关键词题型mine组合过滤在数据库计数分页前完成
+PASS 组合无结果、翻越末页、mine和撤回计数一致
+PASS 私人投递和发送历史不受广场条件影响
+Square 7/7 PASS

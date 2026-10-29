@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { ElMessage } from 'element-plus';
+import { query } from '../phase2';
 import { api, labels } from '../api';
 const route = useRoute(),
   data = ref<any>(null),
@@ -45,7 +46,9 @@ const format = (s: any, value: any) =>
 </script>
 <template>
   <div class="page stats-page" v-loading="loading">
-    <router-link :to="'/editor/' + route.params.id" class="muted">← 返回问卷</router-link>
+    <router-link :to="'/' + query({ communityId: route.query.communityId })" class="muted">
+      ← 返回工作区
+    </router-link>
     <div v-if="loadError" class="empty">
       <p>{{ loadError }}</p>
       <el-button @click="load">重新加载</el-button>
@@ -113,6 +116,16 @@ const format = (s: any, value: any) =>
             <h3>{{ s.question.title }}</h3>
           </div>
         </div>
+        <router-link
+          v-if="s.question.source"
+          :to="
+            '/question-insights/' +
+            s.question.source.questionId +
+            query({ versionId: s.question.source.versionId, communityId: route.query.communityId })
+          "
+        >
+          此固定版本的跨问卷统计 ↗
+        </router-link>
         <template v-if="['single_choice', 'multiple_choice'].includes(s.question.type)">
           <div v-for="o in s.question.options" :key="o.id" class="distribution-row">
             <div>

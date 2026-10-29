@@ -1,5 +1,15 @@
 import { randomBytes, scryptSync, timingSafeEqual, createHash } from 'node:crypto';
 import mongoose from 'mongoose';
+import {
+  surveyAccess,
+  member,
+  transaction,
+  conflict,
+  revision as checkRevision,
+  id as validId,
+  visibleSurveyFilter,
+} from './access';
+import { validateSources } from './library';
 import { User, Survey, Version, Attempt, Response, Claim, Session, AuthThrottle } from './database';
 import {
   Definition,
@@ -90,13 +100,11 @@ export async function me(id: string) {
   return { id: String(u._id), username: u.username };
 }
 export async function owned(id: string, userId: string) {
-  const s = await Survey.findOne({ _id: objectId(id), ownerId: userId, deletedAt: null }).lean();
-  if (!s) throw new DomainError('NOT_FOUND', '问卷不存在或无权访问', 404);
-  return s;
+  return surveyAccess(id, userId);
 }
-export async function listSurveys(userId: string) {
+export async function listSurveys(userId: string, communityId?: string) {
   const surveys = await Survey.aggregate([
-    { $match: { ownerId: userId, deletedAt: null } },
+    { $match: await visibleSurveyFilter(userId, communityId) },
     { $sort: { createdAt: -1 } },
     { $limit: 500 },
     { $addFields: { questionCount: { $size: { $ifNull: ['$draft.questions', []] } } } },
@@ -109,60 +117,97 @@ export async function listSurveys(userId: string) {
   const responseCounts = new Map(counts.map((c) => [c._id, c.count]));
   return surveys.map((s) => ({ ...s, responseCount: responseCounts.get(String(s._id)) ?? 0 }));
 }
-export async function createSurvey(userId: string, title: any) {
+export async function createSurvey(userId: string, title: any, communityId?: string) {
   if (typeof title !== 'string' || !title.trim() || title.length > 120)
     fail('TITLE', '请输入 1～120 字的问卷标题');
-  return Survey.create({
-    ownerId: userId,
-    publicId: randomBytes(12).toString('hex'),
-    status: 'draft',
-    draft: {
-      title: title.trim(),
-      description: '',
-      allowAnonymous: true,
-      allowRepeatSubmissions: false,
-      questions: [],
-      schemaVersion: 1,
-      routingMode: BRANCH_ROUTING,
-    },
-    revision: 0,
+  return transaction(async (session) => {
+    if (communityId !== undefined) {
+      communityId = validId(communityId);
+      await member(communityId, userId, session, true);
+    }
+    const [created] = await Survey.create(
+      [
+        {
+          ownerId: userId,
+          communityId,
+          publicId: randomBytes(12).toString('hex'),
+          status: 'draft',
+          draft: {
+            title: title.trim(),
+            description: '',
+            allowAnonymous: true,
+            allowRepeatSubmissions: false,
+            questions: [],
+            schemaVersion: 1,
+            routingMode: BRANCH_ROUTING,
+          },
+          revision: 0,
+        },
+      ],
+      { session },
+    );
+    return created;
+  });
+}
+export async function changeSurveySpace(id: string, userId: string, body: any) {
+  if (!body || Object.keys(body).some((k) => !['revision', 'communityId'].includes(k)))
+    fail('SPACE', '归属参数不合法');
+  checkRevision(body.revision);
+  const target = body.communityId === null ? null : validId(body.communityId);
+  return transaction(async (session) => {
+    const s = await surveyAccess(id, userId, 'manage', session, true);
+    if (s.ownerId !== userId) throw new DomainError('NOT_FOUND', '仅创建者可修改归属', 404);
+    if (s.status !== 'draft' || s.publishedVersionId) fail('PUBLISHED', '已发布问卷不能修改归属');
+    if (s.revision !== body.revision) return conflict();
+    if (target) await member(target, userId, session, true);
+    if ((s.communityId || null) === target) return s;
+    const updated = await Survey.findOneAndUpdate(
+      { _id: s._id, status: 'draft', deletedAt: null, revision: body.revision },
+      {
+        ...(target ? { $set: { communityId: target } } : { $unset: { communityId: '' } }),
+        $inc: { revision: 1 },
+      },
+      { new: true, session },
+    ).lean();
+    if (!updated) return conflict();
+    return updated;
   });
 }
 export async function deleteSurvey(id: string, userId: string, revision: number) {
-  await owned(id, userId);
-  if (!Number.isInteger(revision) || revision < 0) fail('REVISION', '请提供有效的问卷版本号');
-  const s = await Survey.findOneAndUpdate(
-    { _id: id, ownerId: userId, deletedAt: null, revision },
-    { $set: { deletedAt: new Date() }, $inc: { revision: 1 } },
-    { new: true },
-  ).lean();
-  if (!s) throw new DomainError('CONFLICT', '问卷已变化，请刷新列表后重新确认删除', 409);
-  return { ok: true };
+  checkRevision(revision);
+  return transaction(async (session) => {
+    await surveyAccess(id, userId, 'manage', session, true);
+    const s = await Survey.findOneAndUpdate(
+      { _id: id, deletedAt: null, revision },
+      { $set: { deletedAt: new Date() }, $inc: { revision: 1 } },
+      { new: true, session },
+    ).lean();
+    if (!s) return conflict();
+    return { ok: true };
+  });
 }
 export async function saveDraft(id: string, userId: string, d: Definition, revision: number) {
-  const previous = await owned(id, userId);
-  if (!d || typeof d !== 'object') fail('SETTINGS', '问卷定义不合法');
-  // Older editor clients omit the marker: preserve the stored mode rather than silently downgrade.
-  const definition =
-    d.routingMode === undefined && previous.draft.routingMode !== undefined
-      ? { ...d, routingMode: previous.draft.routingMode }
-      : d;
-  if (getRoutingMode(definition) !== getRoutingMode(previous.draft))
-    throw new DomainError(
-      'ROUTING_UPGRADE_REQUIRED',
-      '规则模式不能通过普通保存切换，请先预览并明确确认升级',
-      409,
-    );
-  validateDefinition(definition);
-  const s = await Survey.findOneAndUpdate(
-    { _id: id, ownerId: userId, status: 'draft', deletedAt: null, revision },
-    { $set: { draft: definition }, $inc: { revision: 1 } },
-    { new: true },
-  ).lean();
-  if (!s) throw new DomainError('CONFLICT', '问卷已发布或已被其他页面修改，请重新加载', 409);
-  return s;
+  checkRevision(revision);
+  return transaction(async (session) => {
+    const previous = await surveyAccess(id, userId, 'manage', session, true);
+    if (!d || typeof d !== 'object') fail('SETTINGS', '问卷定义不合法');
+    const definition =
+      d.routingMode === undefined && previous.draft.routingMode !== undefined
+        ? { ...d, routingMode: previous.draft.routingMode }
+        : d;
+    if (getRoutingMode(definition) !== getRoutingMode(previous.draft))
+      throw new DomainError('ROUTING_UPGRADE_REQUIRED', '请通过规则升级接口明确升级', 409);
+    validateDefinition(definition);
+    await validateSources(definition, previous.draft, userId, session);
+    const saved = await Survey.findOneAndUpdate(
+      { _id: id, status: 'draft', deletedAt: null, revision },
+      { $set: { draft: definition }, $inc: { revision: 1 } },
+      { new: true, session },
+    ).lean();
+    if (!saved) return conflict();
+    return saved;
+  });
 }
-
 export async function readRouting(id: string, userId: string) {
   const s = await owned(id, userId);
   if (s.publishedVersionId) {
@@ -222,11 +267,14 @@ export async function upgradeRouting(id: string, userId: string, body: any) {
     ack.some((id) => typeof id !== 'string' || !preview.after.branchQuestionIds.includes(id))
   )
     fail('ROUTING_ACK_REQUIRED', '请先预览，并明确确认完整的分支题目列表');
-  const s = await Survey.findOneAndUpdate(
-    { _id: objectId(id), ownerId: userId, status: 'draft', revision: body.revision },
-    { $set: { 'draft.routingMode': BRANCH_ROUTING }, $inc: { revision: 1 } },
-    { new: true },
-  ).lean();
+  const s = await transaction(async (session) => {
+    await surveyAccess(id, userId, 'manage', session, true);
+    return Survey.findOneAndUpdate(
+      { _id: objectId(id), status: 'draft', deletedAt: null, revision: body.revision },
+      { $set: { 'draft.routingMode': BRANCH_ROUTING }, $inc: { revision: 1 } },
+      { new: true, session },
+    ).lean();
+  });
   if (!s) throw new DomainError('CONFLICT', '草稿已变化，请重新预览', 409);
   return {
     survey: s,
@@ -247,22 +295,18 @@ export async function publish(id: string, userId: string, rev: number, deadlineA
   const session = await mongoose.startSession();
   try {
     return await session.withTransaction(async () => {
-      const s = await Survey.findOne({
-        _id: objectId(id),
-        ownerId: userId,
-        status: 'draft',
-        revision: rev,
-      })
-        .session(session)
-        .lean();
+      const s = await surveyAccess(id, userId, 'manage', session, true);
+      checkRevision(rev);
+      if (s.status !== 'draft' || s.revision !== rev) return conflict();
       if (!s) throw new DomainError('CONFLICT', '问卷已变化，请重新加载', 409);
       validateDefinition(s.draft as Definition);
+      await validateSources(s.draft as Definition, s.draft as Definition, userId, session);
       const [v] = await Version.create(
         [{ surveyId: id, versionNumber: 1, definition: s.draft, schemaVersion: 1 }],
         { session },
       );
       return Survey.findOneAndUpdate(
-        { _id: id, revision: rev, status: 'draft' },
+        { _id: id, revision: rev, status: 'draft', deletedAt: null },
         {
           $set: {
             status: 'published',
@@ -280,24 +324,29 @@ export async function publish(id: string, userId: string, rev: number, deadlineA
   }
 }
 export async function updateDeadline(id: string, userId: string, value: any) {
-  await owned(id, userId);
-  const s = await Survey.findOneAndUpdate(
-    { _id: id, status: { $ne: 'closed' } },
-    { $set: { deadlineAt: deadline(value) }, $inc: { revision: 1 } },
-    { new: true },
-  ).lean();
-  if (!s) fail('CLOSED', '已关闭的问卷不能修改截止时间');
-  return s;
+  const date = deadline(value);
+  return transaction(async (session) => {
+    await surveyAccess(id, userId, 'manage', session, true);
+    const s = await Survey.findOneAndUpdate(
+      { _id: id, status: { $ne: 'closed' }, deletedAt: null },
+      { $set: { deadlineAt: date }, $inc: { revision: 1 } },
+      { new: true, session },
+    ).lean();
+    if (!s) fail('CLOSED', '已关闭的问卷不能修改截止时间');
+    return s;
+  });
 }
 export async function closeSurvey(id: string, userId: string) {
-  await owned(id, userId);
-  const s = await Survey.findOneAndUpdate(
-    { _id: id, status: 'published' },
-    { $set: { status: 'closed', closedAt: new Date() }, $inc: { revision: 1 } },
-    { new: true },
-  ).lean();
-  if (!s) fail('STATUS', '只有已发布问卷可以关闭');
-  return s;
+  return transaction(async (session) => {
+    await surveyAccess(id, userId, 'manage', session, true);
+    const s = await Survey.findOneAndUpdate(
+      { _id: id, status: 'published', deletedAt: null },
+      { $set: { status: 'closed', closedAt: new Date() }, $inc: { revision: 1 } },
+      { new: true, session },
+    ).lean();
+    if (!s) fail('STATUS', '只有已发布问卷可以关闭');
+    return s;
+  });
 }
 function ensureOpen(s: any) {
   if (s?.deletedAt) throw new DomainError('NOT_FOUND', '问卷已删除', 404);
@@ -478,7 +527,7 @@ export async function submit(id: string, userId: string, revision: number) {
   }
 }
 export async function statistics(id: string, userId: string, questionId?: string) {
-  const s = await owned(id, userId);
+  const s = await surveyAccess(id, userId, 'statistics');
   if (!s.publishedVersionId) fail('NOT_PUBLISHED', '问卷尚未发布');
   const v = await Version.findById(s.publishedVersionId).lean();
   const d = v!.definition as Definition;
@@ -540,7 +589,7 @@ export async function statistics(id: string, userId: string, questionId?: string
   return { title: d.title, total, questions };
 }
 export async function answerPage(id: string, userId: string, qid: string, page: number) {
-  const s = await owned(id, userId);
+  const s = await surveyAccess(id, userId, 'statistics');
   const v = await Version.findById(s.publishedVersionId).lean();
   const q = (v?.definition as Definition)?.questions.find((q) => q.id === qid);
   if (!q || !['text', 'number', 'time', 'color'].includes(q.type))

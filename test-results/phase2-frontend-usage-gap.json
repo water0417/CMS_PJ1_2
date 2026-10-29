@@ -1,0 +1,33 @@
+{
+  "request": "/api/questions/6ae1ad6fd91f82836d6e1b3c/usage?versionId=6ae1ad6fd91f82836d6e1b3d",
+  "actual": {
+    "page": 1,
+    "pageSize": 20,
+    "total": 3,
+    "rows": [
+      {
+        "title": "从题库开始的调查",
+        "surveyId": "6ae1ad70d91f82836d6e1b9a",
+        "kind": "draft",
+        "instanceId": "8ee8bdbf9daeeb7ae4f717fad2c6ec19"
+      },
+      {
+        "surveyId": "6ae1ad70d91f82836d6e1ba5",
+        "title": "九题型固定版本调查",
+        "surveyVersionId": "6ae1ad70d91f82836d6e1be8",
+        "kind": "published",
+        "instanceId": "ff57a2a6f67df1816adbfeecc496f7d0"
+      },
+      {
+        "surveyId": "6ae1ad73d91f82836d6e1f8b",
+        "title": "社区公共体验调查",
+        "communityId": "6ae1ad70d91f82836d6e1b7b",
+        "surveyVersionId": "6ae1ad73d91f82836d6e1fa1",
+        "kind": "published",
+        "instanceId": "4ec4cfb89d0bb74e3c75d74d3ac53e23"
+      }
+    ],
+    "visibility": "仅列有权访问的问卷，不返回隐藏引用数量或身份"
+  },
+  "expected": "个人空间使用查询不应包含communityId的行；或提供明确的个人scope参数"
+}

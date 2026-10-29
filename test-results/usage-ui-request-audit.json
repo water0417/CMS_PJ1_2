@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-29T02:41:51.561Z",
+  "database": "survey_studio_usage_ui_20261029",
+  "results": [
+    {
+      "name": "浏览器实际个人请求省略communityId，社区为实际ID，无空串/undefined",
+      "result": "PASS"
+    },
+    {
+      "name": "所有实际200使用响应均由所选空间提供total和rows，无跨空间混入",
+      "result": "PASS"
+    },
+    {
+      "name": "浏览器三个空间page2分别1/2/3，数据库total为21/22/23",
+      "result": "PASS"
+    },
+    {
+      "name": "版本切换后usage/statistics以page1读取v2空内容",
+      "result": "PASS"
+    },
+    {
+      "name": "回答统计仍按固定v1所选空间统计实例21/22/23",
+      "result": "PASS"
+    },
+    {
+      "name": "确有A晚于后发B返回的真实乱序，并存在两社区失权404",
+      "result": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "date": "2026-10-28",
+  "database": "survey_studio_phase2_ui_1793175000000",
+  "checks": [
+    {
+      "name": "single_choice 浏览器编辑入库v2",
+      "result": "PASS"
+    },
+    {
+      "name": "multiple_choice 浏览器编辑入库v2",
+      "result": "PASS"
+    },
+    {
+      "name": "text 浏览器编辑入库v2",
+      "result": "PASS"
+    },
+    {
+      "name": "number 浏览器编辑入库v2",
+      "result": "PASS"
+    },
+    {
+      "name": "matrix 浏览器编辑入库v2",
+      "result": "PASS"
+    },
+    {
+      "name": "ranking 浏览器编辑入库v2",
+      "result": "PASS"
+    },
+    {
+      "name": "time 浏览器编辑入库v2",
+      "result": "PASS"
+    },
+    {
+      "name": "slider 浏览器编辑入库v2",
+      "result": "PASS"
+    },
+    {
+      "name": "color 浏览器编辑入库v2",
+      "result": "PASS"
+    },
+    {
+      "name": "历史v1恢复为v3，原v1/v2保留",
+      "result": "PASS"
+    },
+    {
+      "name": "发送历史撤回记录保留且无复制操作",
+      "result": "PASS"
+    },
+    {
+      "name": "发送历史类型筛选+服务端21条分页20+1",
+      "result": "PASS"
+    },
+    {
+      "name": "引用内容只读；未保存取消保留、先保存成功再选题",
+      "result": "PASS"
+    },
+    {
+      "name": "single_choice 指定v1选题",
+      "result": "PASS"
+    },
+    {
+      "name": "multiple_choice 指定v1选题",
+      "result": "PASS"
+    },
+    {
+      "name": "text 指定v1选题",
+      "result": "PASS"
+    },
+    {
+      "name": "number 指定v1选题",
+      "result": "PASS"
+    },
+    {
+      "name": "matrix 指定v1选题",
+      "result": "PASS"
+    },
+    {
+      "name": "ranking 指定v1选题",
+      "result": "PASS"
+    },
+    {
+      "name": "time 指定v1选题",
+      "result": "PASS"
+    },
+    {
+      "name": "slider 指定v1选题",
+      "result": "PASS"
+    },
+    {
+      "name": "color 指定v1选题",
+      "result": "PASS"
+    },
+    {
+      "name": "选项a被删除导致RULE，差异展示并禁用升级",
+      "result": "PASS"
+    },
+    {
+      "name": "修正规则后主动升级v4，明确脱离后本地可编辑",
+      "result": "PASS"
+    },
+    {
+      "name": "社区题409本地输入保留，服务器版本并排比较",
+      "result": "PASS"
+    },
+    {
+      "name": "普通成员仅统计入口，私人来源社区固定实例统计可读",
+      "result": "PASS"
+    },
+    {
+      "name": "成员生成社区v4并转存独立个人副本",
+      "result": "PASS"
+    },
+    {
+      "name": "投递接受产生副本、拒绝后无接受操作",
+      "result": "PASS"
+    },
+    {
+      "name": "退出后原社区题404且无编辑权，先前个人副本继续可用",
+      "result": "PASS"
+    },
+    {
+      "name": "公开广场固定v1转存个人独立副本",
+      "result": "PASS"
+    },
+    {
+      "name": "链接登录返回原路径、固定v1、携带token接受幂等同一副本",
+      "result": "PASS"
+    },
+    {
+      "name": "外部用户拒绝社区邀请后仍无成员资源入口",
+      "result": "PASS"
+    },
+    {
+      "name": "前端创建社区、按ID查用户名后发邀请",
+      "result": "PASS"
+    },
+    {
+      "name": "当前社区创建问卷并进入可管理编辑器",
+      "result": "PASS"
+    },
+    {
+      "name": "single_choice 固定v1跨卷统计页面",
+      "result": "PASS"
+    },
+    {
+      "name": "multiple_choice 固定v1跨卷统计页面",
+      "result": "PASS"
+    },
+    {
+      "name": "text 固定v1跨卷统计页面",
+      "result": "PASS"
+    },
+    {
+      "name": "同卷重复实例22次文本统计分页20+2",
+      "result": "PASS"
+    },
+    {
+      "name": "number 固定v1跨卷统计页面",
+      "result": "PASS"
+    },
+    {
+      "name": "matrix 固定v1跨卷统计页面",
+      "result": "PASS"
+    },
+    {
+      "name": "ranking 固定v1跨卷统计页面",
+      "result": "PASS"
+    },
+    {
+      "name": "time 固定v1跨卷统计页面",
+      "result": "PASS"
+    },
+    {
+      "name": "slider 固定v1跨卷统计页面",
+      "result": "PASS"
+    },
+    {
+      "name": "color 固定v1跨卷统计页面",
+      "result": "PASS"
+    },
+    {
+      "name": "题库22条分页20+2",
+      "result": "PASS"
+    },
+    {
+      "name": "390×844题库/共享管理与移动导航，文档无横向溢出",
+      "result": "PASS"
+    },
+    {
+      "name": "公开项撤回后成员既有固定版本副本仍可见",
+      "result": "PASS"
+    },
+    {
+      "name": "新社区邀请接受、管理员移除后成员列表2→1",
+      "result": "PASS"
+    },
+    {
+      "name": "管理员移除后成员原社区地址不再显示可操作资源",
+      "result": "PASS"
+    },
+    {
+      "name": "本地问卷题经专用操作存入个人题库v1；引用选项/矩阵新增按钮禁用",
+      "result": "PASS"
+    },
+    {
+      "name": "第一阶段浏览器回归：匿名九题型填写、选填跳过、完成后返回查看不清答案、同路改答保留后续、成功提交",
+      "result": "PASS"
+    },
+    {
+      "name": "第一阶段问卷统计返回12份答卷并显示九题型统计及固定来源跨卷入口",
+      "result": "PASS"
+    },
+    {
+      "name": "数字v2空统计：回答数0，均值/最小/最大显示暂无数据而不是0",
+      "result": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+
+> survey-studio@1.0.0 test:usage-scope
+> tsx tests/phase2-usage-scope.ts
+
+PASS 个人空间过滤在分页前执行，21实例两页及total一致
+PASS 社区A/B严格隔离，其他空间不占分页且不泄露名称
+PASS 非成员及未接受邀请者拒绝社区使用和统计查询
+PASS 私人来源固定版本授权保留，不授予私人题库和其他版本权限
+PASS 副本及其他用户私人问卷不进入原题使用结果
+PASS 无引用题返回空列表，空和缺失communityId兼容
+PASS 发布及归档沿用原口径，回答统计按空间聚合不变
+PASS 题目版本归属不匹配被拒绝，独立副本使用单独计数
+PASS 移除和退出撤销社区访问，个人固定实例仍可读
+Usage scope 9/9 PASS

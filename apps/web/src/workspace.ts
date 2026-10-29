@@ -9,11 +9,15 @@ export interface SurveySummary {
   questionCount: number;
   responseCount: number;
   revision: number;
+  ownerId: string;
+  communityId?: string;
   createdAt: string;
   deadlineAt?: string;
 }
 export const workspace = reactive({
   surveys: [] as SurveySummary[],
+  communityId: '',
+  communityAdminId: '',
   filter: 'all',
   search: '',
   templatesOpen: false,
@@ -50,8 +54,12 @@ export const templates = [
     ],
   },
 ];
+let surveyRequest = 0;
 export async function refreshSurveys() {
-  workspace.surveys = await api('/surveys');
+  const request = ++surveyRequest,
+    scope = workspace.communityId;
+  const rows = await api('/surveys' + (scope ? '?communityId=' + scope : ''));
+  if (request === surveyRequest && workspace.communityId === scope) workspace.surveys = rows;
 }
 export function statusName(s: SurveySummary) {
   if (s.status === 'published' && s.deadlineAt && Date.parse(s.deadlineAt) <= Date.now())

@@ -1,4 +1,5 @@
 import mongoose, { Schema } from 'mongoose';
+import { initPhase2Models } from './phase2-models';
 const opts = { timestamps: true, versionKey: false, minimize: false } as const;
 interface DbRecord {
   _id: mongoose.Types.ObjectId;
@@ -17,6 +18,7 @@ export const Survey = make(
   'surveys',
   {
     ownerId: str,
+    communityId: String,
     publicId: str,
     status: { type: String, enum: ['draft', 'published', 'closed'], required: true },
     draft: Schema.Types.Mixed,
@@ -115,6 +117,7 @@ export async function connectDatabase(uri: string) {
       required: ['ownerId', 'publicId', 'status', 'draft', 'revision'],
       properties: {
         ownerId: { bsonType: 'string' },
+        communityId: { bsonType: 'string' },
         publicId: { bsonType: 'string' },
         status: { enum: ['draft', 'published', 'closed'] },
         draft: { bsonType: 'object' },
@@ -220,4 +223,5 @@ export async function connectDatabase(uri: string) {
       validationLevel: 'strict',
       validationAction: 'error',
     });
+  await initPhase2Models();
 }

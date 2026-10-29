@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-29",
+  "database": "survey_studio_usage_ui_20261029",
+  "checks": [
+    {
+      "name": "个人固定v1使用21条20+1、回答21次20+1；两个分页独立",
+      "result": "PASS"
+    },
+    {
+      "name": "个人page2切社区A两分页回1；A使用22条20+2/回答22，未混个人B",
+      "result": "PASS"
+    },
+    {
+      "name": "Apage2切B回1；B23条20+3/回答23，未混其他空间",
+      "result": "PASS"
+    },
+    {
+      "name": "B第二页切v2：两请求page1，总数0，所选空间空状态",
+      "result": "PASS"
+    },
+    {
+      "name": "个人→A→B真实乱序：B先回、A晚回后仍仅B20行/total23；无旧空间结果",
+      "result": "PASS"
+    },
+    {
+      "name": "成员通过A固定v1查看私人来源使用22/回答22，无须私人题库历史",
+      "result": "PASS"
+    },
+    {
+      "name": "成员被移除A后原页刷新usage/statistics404，行/链接/旧总数清空，不回退其他空间",
+      "result": "PASS"
+    },
+    {
+      "name": "成员主动退出B后固定社区usage及statistics404，未展示其他空间",
+      "result": "PASS"
+    },
+    {
+      "name": "390×844长矩阵末行选项可滚动点击；409版本比较单列无横向溢出，保留本地按钮可点击",
+      "result": "PASS"
+    },
+    {
+      "name": "390×844升级差异对照/JSON可滚动，无弹窗横向溢出，底部升级/确认可点击且升级成功",
+      "result": "PASS"
+    }
+  ]
+}

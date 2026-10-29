@@ -4,27 +4,48 @@ import { useRoute, useRouter } from 'vue-router';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import { auth, loadAuth, api } from './api';
 import { workspace, templates, refreshSurveys, templateDefinition } from './workspace';
+import { allCommunities, copyText } from './phase2';
+import InvitationInbox from './components/InvitationInbox.vue';
 const route = useRoute(),
   router = useRouter();
-const creating = ref(false);
+const creating = ref(false),
+  createOpen = ref(false),
+  createTitle = ref(''),
+  createSpace = ref(''),
+  createCommunities = ref<any[]>([]),
+  pendingTemplate = ref<number | undefined>();
 const home = computed(() => route.path === '/');
 const login = computed(() => route.path === '/login');
 const filling = computed(() => route.path.startsWith('/survey/'));
-const crumb = computed(() =>
-  login.value
-    ? '账号访问'
-    : filling.value
-      ? '问卷填写'
-      : route.path.startsWith('/editor/')
-        ? '问卷编辑'
-        : route.path.startsWith('/statistics/')
-          ? '统计分析'
-          : workspace.filter === 'draft'
-            ? '草稿箱'
-            : '我的问卷',
+const areaTitle = computed(
+  () =>
+    Object.entries({
+      '/library': '我的题库',
+      '/questions/': '编辑题目',
+      '/question-insights/': '跨问卷统计',
+      '/square': '题目广场',
+      '/shares': '共享管理',
+      '/communities': '协同社区',
+      '/question-links/': '分享链接',
+    }).find(([prefix]) => route.path.startsWith(prefix))?.[1],
+);
+const crumb = computed(
+  () =>
+    areaTitle.value ||
+    (login.value
+      ? '账号访问'
+      : filling.value
+        ? '问卷填写'
+        : route.path.startsWith('/editor/')
+          ? '问卷编辑'
+          : route.path.startsWith('/statistics/')
+            ? '统计分析'
+            : workspace.filter === 'draft'
+              ? '草稿箱'
+              : '我的问卷'),
 );
 onMounted(async () => {
-  await loadAuth();
+  if (!auth.loaded) await loadAuth();
   if (auth.user && !home.value && !filling.value) {
     try {
       await refreshSurveys();
@@ -49,6 +70,8 @@ async function logout() {
     await api('/auth/logout', 'POST');
     auth.user = null;
     workspace.surveys = [];
+    workspace.communityId = '';
+    workspace.communityAdminId = '';
     workspace.filter = 'all';
     workspace.search = '';
     await router.push('/login');
@@ -62,29 +85,31 @@ async function create(templateIndex?: number) {
     return;
   }
   if (creating.value) return;
-  let title: string;
-  if (templateIndex === undefined) {
-    try {
-      const result = await ElMessageBox.prompt(
-        '从一个清晰的问题开始，开启下一次发现。',
-        '给好奇心起个名字。',
-        {
-          inputPlaceholder: '例如：校园生活体验调查',
-          inputValidator: (v) => (!!v?.trim() && v.length <= 120) || '请输入 1～120 字的标题',
-          confirmButtonText: '创建草稿',
-          cancelButtonText: '再想一想',
-          customClass: 'studio-dialog',
-        },
-      );
-      title = result.value.trim();
-    } catch {
-      return;
-    }
-  } else title = templates[templateIndex].title;
+  try {
+    createCommunities.value = await allCommunities();
+  } catch (e: any) {
+    ElMessage.error(e.message);
+    return;
+  }
+  pendingTemplate.value = templateIndex;
+  createTitle.value = templateIndex === undefined ? '' : templates[templateIndex].title;
+  createSpace.value = createCommunities.value.some((c) => c._id === workspace.communityId)
+    ? workspace.communityId
+    : '';
+  createOpen.value = true;
+}
+async function confirmCreate() {
+  if (creating.value || !createTitle.value.trim() || createTitle.value.length > 120) return;
+  const title = createTitle.value.trim(),
+    templateIndex = pendingTemplate.value;
   creating.value = true;
   let created: any;
   try {
-    created = await api('/surveys', 'POST', { title });
+    created = await api('/surveys', 'POST', {
+      title,
+      ...(createSpace.value ? { communityId: createSpace.value } : {}),
+    });
+    createOpen.value = false;
     if (templateIndex !== undefined) {
       try {
         await api(`/surveys/${created._id}/draft`, 'PUT', {
@@ -186,6 +211,20 @@ function showTemplates() {
               <span>模板中心</span>
               <small>↗</small>
             </button>
+            <button
+              v-for="[path, title] in [
+                ['/library', '我的题库'],
+                ['/square', '题目广场'],
+                ['/shares', '共享管理'],
+                ['/communities', '协同社区'],
+              ]"
+              :key="path"
+              :class="{ active: route.path.startsWith(path) }"
+              @click="router.push(path)"
+            >
+              <span>{{ title }}</span>
+              <small>↗</small>
+            </button>
           </nav>
           <div class="sidebar-bottom">
             <div class="sidebar-note">
@@ -216,6 +255,31 @@ function showTemplates() {
               <strong>{{ crumb }}</strong>
             </div>
             <div class="top-actions">
+              <el-dropdown
+                v-if="auth.user && !filling"
+                class="mobile-phase-nav"
+                trigger="click"
+                @command="(path: string) => router.push(path)"
+              >
+                <button class="account-logout">导航 ▾</button>
+                <template #dropdown>
+                  <el-dropdown-menu>
+                    <el-dropdown-item
+                      v-for="[path, title] in [
+                        ['/', '我的问卷'],
+                        ['/library', '我的题库'],
+                        ['/square', '题目广场'],
+                        ['/shares', '共享管理'],
+                        ['/communities', '协同社区'],
+                      ]"
+                      :key="path"
+                      :command="path"
+                    >
+                      {{ title }}
+                    </el-dropdown-item>
+                  </el-dropdown-menu>
+                </template>
+              </el-dropdown>
               <button
                 v-if="auth.user && !filling"
                 class="mobile-create"
@@ -227,7 +291,16 @@ function showTemplates() {
               </button>
               <span class="prototype-label">ASKWELL STUDIO</span>
               <template v-if="auth.user">
-                <span class="user-name">{{ auth.user.username }}</span>
+                <InvitationInbox v-if="!filling" />
+                <el-popover trigger="click" width="300">
+                  <template #reference>
+                    <button class="account-logout">{{ auth.user.username }}</button>
+                  </template>
+                  <strong>{{ auth.user.username }}</strong>
+                  <p>用户 ID</p>
+                  <code class="user-id">{{ auth.user.id }}</code>
+                  <el-button text @click="copyText(auth.user.id)">复制用户 ID</el-button>
+                </el-popover>
                 <span class="avatar" aria-hidden="true">
                   {{ auth.user.username.slice(0, 1).toUpperCase() }}
                 </span>
@@ -255,6 +328,31 @@ function showTemplates() {
       </div>
     </div>
   </div>
+  <el-dialog v-model="createOpen" title="新建问卷" width="500px" :close-on-click-modal="false">
+    <el-form label-position="top">
+      <el-form-item label="问卷标题">
+        <el-input v-model="createTitle" maxlength="120" placeholder="为问卷起一个名字" />
+      </el-form-item>
+      <el-form-item label="问卷归属">
+        <el-select v-model="createSpace" :empty-values="[null, undefined]">
+          <el-option label="个人空间" value="" />
+          <el-option v-for="c in createCommunities" :key="c._id" :label="c.name" :value="c._id" />
+        </el-select>
+      </el-form-item>
+    </el-form>
+    <p>问卷归属创建后固定；使用社区题不会改变归属。</p>
+    <template #footer>
+      <el-button :disabled="creating" @click="createOpen = false">取消</el-button>
+      <el-button
+        type="primary"
+        :loading="creating"
+        :disabled="!createTitle.trim()"
+        @click="confirmCreate"
+      >
+        创建草稿
+      </el-button>
+    </template>
+  </el-dialog>
   <el-dialog
     v-model="workspace.templatesOpen"
     title="从一个好起点开始。"
